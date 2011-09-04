@@ -15,14 +15,10 @@ class RevScriptsHighlight {
 	var $title;
 	
 	// Constructor Methode
-	function RevScriptsHighlight($code, $type, $title=NULL)
+	function RevScriptsHighlight($code, $type)
 	{
 		$this->code = $code;
 		$this->type = $type;
-		if($title!=NULL)
-		{
-			$this->title = $title;
-		}
 	}
 	
 	// Methode to Parse & return the highlighted code
