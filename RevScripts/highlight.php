@@ -1,6 +1,6 @@
 <?php
 # RevScripts Syntax Highlight
-# main.php by H4ckHunt3r
+# highlight.php by H4ckHunt3r
 
 class RevScriptsHighlight {
 	

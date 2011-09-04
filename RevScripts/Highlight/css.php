@@ -1,4 +1,7 @@
 <?php
+# RevScripts Syntax Highlight
+# css.php by H4ckHunt3r
+
 class RevScriptsCodeParser {
 
 /*
