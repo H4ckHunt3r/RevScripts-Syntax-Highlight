@@ -1,6 +1,6 @@
 <?php
 # RevScripts Syntax Highlight
-# highlight.php by H4ckHunt3r
+# main.php by H4ckHunt3r
 
 class RevScriptsHighlight {
 	
@@ -13,9 +13,10 @@ class RevScriptsHighlight {
 	var $code;
 	var $type;
 	var $title;
+	var $parser;
 	
 	// Constructor Methode
-	function RevScriptsHighlight($code, $type)
+	function __construct($code, $type, $title=NULL)
 	{
 		$this->code = $code;
 		$this->type = $type;
@@ -27,7 +28,8 @@ class RevScriptsHighlight {
 		if(file_exists($this->highlightPath.$this->type.".php"))
 		{
 			include($this->highlightPath.$this->type.".php");
-			
+			$parser = new RevScriptsCodeParser();
+			$parser->parseCode($this->code);
 		} else {
 			return false; // If there is no file to highlight the code return false
 		}
