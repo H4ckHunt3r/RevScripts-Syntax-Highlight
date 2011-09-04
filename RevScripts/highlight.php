@@ -25,14 +25,18 @@ class RevScriptsHighlight {
 	// Methode to Parse & return the highlighted code
 	function parseCode()
 	{
-		if(file_exists($this->highlightPath.$this->type.".php"))
+		if(file_exists($this->highlightPath.strtolower($this->type).".php"))
 		{
-			include($this->highlightPath.$this->type.".php");
+			
+			include($this->highlightPath.strtolower($this->type).".php");
 			$parser = new RevScriptsCodeParser();
-			$htmlCode = "<pre class=\"code-".$this->type."\">";
-			$htmlCode .= $parser->parseCode($this->code);
-			$htmlCode .= "</pre>";
+			
+				$htmlCode = "<pre class=\"code-".strtolower($this->type)."\">";
+				$htmlCode .= $parser->parseCode($this->code);
+				$htmlCode .= "</pre>";
+			
 			return $htmlCode;
+			
 		} else {
 			return false; // If there is no file to highlight the code return false
 		}
