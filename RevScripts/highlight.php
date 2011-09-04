@@ -29,7 +29,10 @@ class RevScriptsHighlight {
 		{
 			include($this->highlightPath.$this->type.".php");
 			$parser = new RevScriptsCodeParser();
-			$parser->parseCode($this->code);
+			$htmlCode = "<pre class=\"code-".$this->type."\">";
+			$htmlCode .= $parser->parseCode($this->code);
+			$htmlCode .= "</pre>";
+			return $htmlCode;
 		} else {
 			return false; // If there is no file to highlight the code return false
 		}
